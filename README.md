@@ -13,12 +13,12 @@ Repositório pessoal de estudos para a prova/sabatina de Engenharia de Machine L
 
 - [ementa.md](ementa.md) — lista de tópicos da prova com checkboxes de autoavaliação (Domino / Preciso reforçar / Não sei). Ponto de partida para priorizar o estudo.
 - [materiais.md](materiais.md) — materiais de apoio indicados (livros, artigos, whitepapers) organizados por tema, com status de leitura.
-- [insights/](insights/) — anotações datadas com o que vou aprendendo: insights, resumos, dúvidas resolvidas, e conceitos a desmistificar para o time.
+- [insights/](insights/) — anotações datadas com o que vou aprendendo: insights, resumos, dúvidas resolvidas, e conceitos a desmistificar para o time. **Conteúdo escrito por mim** (fixa o conhecimento); o Claude cria o esqueleto do arquivo e revisa/complementa depois se eu pedir. Ver [insights/README.md](insights/README.md).
 - [roadmap.md](roadmap.md) — será criado depois da autoavaliação da ementa, priorizando o que preciso reforçar.
 
 ## Fluxo de trabalho
 
 1. Preencher os checkboxes da ementa com autoavaliação honesta.
 2. A partir disso, montar o roadmap priorizado (o que não sei > o que preciso reforçar > revisão do que domino).
-3. Estudar material por material, registrando insights em `insights/`.
+3. Estudar material por material. Quando surgir um insight, o Claude cria o arquivo com o esqueleto pronto em `insights/`; eu escrevo o conteúdo.
 4. Commitar incrementalmente — este repo é a base de conhecimento versionada.
