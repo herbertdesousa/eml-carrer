@@ -15,6 +15,7 @@ Repositório pessoal de estudos para a prova/sabatina de Engenharia de Machine L
 - [materiais.md](materiais.md) — materiais de apoio indicados (livros, artigos, whitepapers) organizados por tema, com status de leitura.
 - [insights/](insights/) — anotações datadas com o que vou aprendendo: insights, resumos, dúvidas resolvidas, e conceitos a desmistificar para o time. **Conteúdo escrito por mim** (fixa o conhecimento); o Claude cria o esqueleto do arquivo e revisa/complementa depois se eu pedir. Ver [insights/README.md](insights/README.md).
 - [roadmap.md](roadmap.md) — será criado depois da autoavaliação da ementa, priorizando o que preciso reforçar.
+- [memory/](memory/) — cópia versionada da memória que o Claude mantém sobre este projeto (contexto, meu perfil, convenções de trabalho), sincronizada com a memória local do Claude Code.
 
 ## Fluxo de trabalho
 
