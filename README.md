@@ -13,6 +13,7 @@ Repositório pessoal de estudos para a prova/sabatina de Engenharia de Machine L
 
 - [ementa.md](ementa.md) — lista de tópicos da prova com checkboxes de autoavaliação (Domino / Preciso reforçar / Não sei). Ponto de partida para priorizar o estudo.
 - [materiais.md](materiais.md) — materiais de apoio indicados (livros, artigos, whitepapers) organizados por tema, com status de leitura.
+- [add-ons.md](add-ons.md) — assuntos fora da ementa oficial, mas que dão profundidade para os temas dela (ex: Data Lake, Data Warehouse, Data Mesh), com checkboxes de autoavaliação e links.
 - [insights/](insights/) — anotações datadas com o que vou aprendendo: insights, resumos, dúvidas resolvidas, e conceitos a desmistificar para o time. **Conteúdo escrito por mim** (fixa o conhecimento); o Claude cria o esqueleto do arquivo e revisa/complementa depois se eu pedir. Ver [insights/README.md](insights/README.md).
 - [roadmap.md](roadmap.md) — será criado depois da autoavaliação da ementa, priorizando o que preciso reforçar.
 - [memory/](memory/) — cópia versionada da memória que o Claude mantém sobre este projeto (contexto, meu perfil, convenções de trabalho), sincronizada com a memória local do Claude Code.
