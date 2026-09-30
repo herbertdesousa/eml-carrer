@@ -11,3 +11,4 @@ O Claude deve manter esta pasta e a memória local em sincronia: sempre que salv
 - [user_profile.md](user_profile.md) — quem sou, meu objetivo com o estudo.
 - [project_context.md](project_context.md) — estrutura e fluxo de trabalho deste repo.
 - [feedback_insight_authorship.md](feedback_insight_authorship.md) — como o Claude deve (não) escrever os insights.
+- [domain_knowledge_covered.md](domain_knowledge_covered.md) — resumo das explicações conceituais já dadas (Feature Store, Model Registry, Lambda/Kappa, SoR/SoT/Spec, etc.), pra não re-explicar do zero.

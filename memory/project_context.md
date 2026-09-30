@@ -13,6 +13,7 @@ Repo: `C:\MyStuffs\eml-carrer`, git-initialized locally.
 - `materiais.md` — the exam's official supporting materials, organized by theme with read-status checkboxes.
 - `insights/` — dated insight notes. **Content is written by the user, not Claude** — see [feedback_insight_authorship.md](feedback_insight_authorship.md). Claude only scaffolds the file (title, "De onde veio" context, empty headers) from `insights/_template.md`.
 - `memory/` — this folder: versioned copy of Claude's project memory, kept in sync with the local `~/.claude/.../memory/` store.
+- `add-ons.md` — subjects outside the official ementa but conceptually load-bearing for it (created 2026-09-29). First batch: Data Lake, Data Warehouse, Data Mesh, named conceptually as "paradigmas/arquiteturas de armazenamento e organização de dados" (data storage & organization architectures) — all answer "where/how does org data live and get consumed", trading off centralization-vs-domain-ownership and schema-on-read-vs-write. Same 3-checkbox self-assessment convention as `ementa.md`. User has since edited the file structure themselves (consolidated the three topics under one combined checklist) — trust the live file over this description.
 - `roadmap.md` — not yet created; comes next, prioritized by the filled-in `ementa.md` (Não sei > Preciso reforçar > review of Domino topics).
 
 **Ementa self-assessment as of 2026-09-28** (for quick reference — check the live file for current state):
