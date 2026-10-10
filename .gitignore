@@ -1,2 +1,18 @@
 .DS_Store
 Thumbs.db
+
+# terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+*.tfvars
+*.tfvars.json
+infra/_sandbox/tfplan
+infra/_sandbox/greeting.txt
+
+# datagen
+datagen/.venv/
+app/data-mesh/sor*
+__pycache__/

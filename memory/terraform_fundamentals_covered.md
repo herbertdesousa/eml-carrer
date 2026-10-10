@@ -1,0 +1,23 @@
+---
+name: terraform-fundamentals-covered
+description: "Terraform core concepts already taught via a hands-on sandbox (providers, state, plan diffs, modules) — avoid re-explaining from scratch, build on top"
+metadata:
+  node_type: memory
+  originSessionId: 73f5b50a-4f93-41b7-a13e-dc08341d3a9f
+  modified: 2026-10-10T17:12:54.697Z
+---
+
+User had real gaps in how Terraform works mechanically (not just AWS). Taught via a disposable, zero-cost sandbox at `infra/_sandbox/` (providers `random` + `local`, no credentials/cost needed) — the sandbox was deleted on 2026-10-10 after the lesson, so don't expect it to exist; recreate the same pattern if another fundamentals lesson is needed.
+
+**Concepts covered, with the concrete evidence used:**
+
+- **`required_providers` + `provider` block** = declares which plugins (and version range) and configures a connection (region/profile for `aws`; nothing needed for `random`/`local`). `terraform init` downloads providers into `.terraform/` (gitignored) and pins the exact resolved version in `.terraform.lock.hcl` (committed — reproducibility).
+- **Resources and implicit dependencies**: a `local_file` resource referenced `random_pet.name.id` in its `content` — Terraform inferred the creation order from that reference alone, no explicit `depends_on` needed. This is the same mechanism behind `aws_glue_catalog_table` referencing `aws_s3_bucket.domain["crm"].bucket` in the real `infra/data-mesh`.
+- **State file (`terraform.tfstate`)** is the *only* source of truth Terraform has about what it created — it does not re-scan the real provider. Deleting the real resource outside Terraform (what happened earlier with the smoke-test bucket, see [[project_context]]) desyncs state from reality; demonstrated concretely by inspecting the sandbox's `terraform.tfstate` JSON (resources array, each with `dependencies` recorded).
+- **Plan diff symbols**: `+` create, `~` update in place, **`-/+` destroy-and-recreate** (annotated inline as `# forces replacement` — shown live by changing `local_file`'s `content`, which turned out to force replacement because `id` is derived from a content hash).
+- **Parallelism**: independent resources (two separate module calls' `random_pet`) were created at the same instant in the apply log — Terraform parallelizes everything that isn't connected by a dependency edge in the graph, only serializing what must wait.
+- **Modules**: a module is just a directory with its own `.tf` files (`variable`/`resource`/`output`), called via `module "alias" { source = "./path", input = ... }` — demonstrated calling the same `modules/greeter` module twice (`alice`, `bob`) with different inputs, each producing fully independent resources addressed as `module.alice.random_pet.name` / `module.bob.random_pet.name`. A module's own outputs are only visible outside it via `module.<alias>.<output>`.
+- **`path.root` vs `path.module`**: inside the module, `path.root` = where you ran `terraform init/apply` from; `path.module` = the module's own directory. Using the wrong one is a classic beginner mistake (file lands inside `modules/greeter/` instead of next to root).
+- **File names are 100% cosmetic**: Terraform concatenates every `.tf` file in a directory into one logical config regardless of filename — `main.tf` vs `s3.tf`/`glue.tf`/`locals.tf` is purely for human readability, not a Terraform requirement. Adopted convention in this project (see [[project_context]] for the real `infra/` layout): start with one `main.tf` per layer; only split into named files once a layer has genuinely distinct concerns or the file gets uncomfortably long. This is why `infra/athena/` (small, 3 resources) stayed as one `main.tf` while `infra/data-mesh/` (bigger, two distinct concerns: storage vs. catalog) is split into `s3.tf`/`glue.tf`/etc. — inconsistency was asked about and confirmed intentional, not a mistake.
+- **`infra/` itself has no `.tf` files** — it's just a parent folder grouping independent root modules (`data-mesh/`, `athena/`, `iam/`), each with its own `terraform init`/state. Running Terraform directly in `infra/` would do nothing.
+- **Module vs. `for_each` distinction** (tied back to the real code): `for_each` repeats a *single resource block* (used for `aws_s3_bucket` across `crm`/`payment`, same shape). A *module* repeats a *bundle of resources* as a unit. Guidance given: don't extract a module until a bundle-shaped pattern repeats a 3rd time (e.g., if Feature Store later also needs its own "bucket + Glue table" bundle) — avoids premature abstraction, consistent with the user's own stated preference for incremental/pragmatic structure.

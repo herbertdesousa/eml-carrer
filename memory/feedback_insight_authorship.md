@@ -1,6 +1,10 @@
 ---
 name: feedback-insight-authorship
-description: In eml-carrer, Claude only scaffolds insight notes — the user writes the content themselves to retain knowledge
+description: "In eml-carrer, Claude only scaffolds insight notes — the user writes the content themselves to retain knowledge"
+metadata:
+  node_type: memory
+  originSessionId: 73f5b50a-4f93-41b7-a13e-dc08341d3a9f
+  modified: 2026-10-10T17:13:17.545Z
 ---
 
 When working in this project, do **not** write the body of `insights/*.md` notes for the user. Only create the file with the skeleton: title, a **De onde veio:** line filled in with context (what question/material triggered it, links to related insights), and empty **O que aprendi:** / **Relação com a ementa:** / **Desmistificar para o time?** headers per `insights/_template.md`.
@@ -9,4 +13,4 @@ When working in this project, do **not** write the body of `insights/*.md` notes
 
 **How to apply:** in chat, still give the full conceptual explanation/answer (that's the tutoring value). But when it comes to persisting it as an insight file in the repo, only scaffold the file — don't pre-fill "O que aprendi". If the user later asks Claude to review, complement, or find gaps in something they already wrote, that's fine — the restriction is on writing the note from scratch on their behalf, not on ever touching the file again.
 
-**Related:** also keep this `memory/` folder itself in sync with Claude's local memory store — the user asked (2026-09-28) for project memory to be versioned inside the repo, not only in `~/.claude/.../memory/`.
+**Related:** also keep this `memory/` folder itself in sync with Claude's local memory store — the user asked (2026-09-28) for project memory to be versioned inside the repo, not only in `~/.claude/.../memory/`. (2026-10-10 note: the local store had actually gone out of sync — this repo's `memory/` had files the local store didn't. Re-synced; keep both updated together going forward, don't assume the local store already has what the repo has.)

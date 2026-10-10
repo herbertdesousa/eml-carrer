@@ -1,6 +1,10 @@
 ---
 name: domain-knowledge-covered
-description: Conceptual ML platform/data-architecture explanations already given to the user — avoid re-deriving from scratch, build on top instead
+description: "Conceptual ML platform/data-architecture explanations already given to the user — avoid re-deriving from scratch, build on top instead"
+metadata:
+  node_type: memory
+  originSessionId: 73f5b50a-4f93-41b7-a13e-dc08341d3a9f
+  modified: 2026-10-10T17:13:34.379Z
 ---
 
 Running log of the conceptual explanations already covered in conversation, mapped to the user's real architecture (see [project_context.md](project_context.md) for the architecture diagram: Jornadas → SoR (Data Mesh, medallion) / Kafka → ED (SoT/Spec) + CD (modelos/books) → EML (Model Registry + Feature Store: Book registry, Online Ingestor, Serving layer Dynamo/API)).
@@ -28,3 +32,5 @@ Running log of the conceptual explanations already covered in conversation, mapp
 **Data Lake / Data Warehouse / Data Mesh family:** named conceptually as "paradigmas/arquiteturas de armazenamento e organização de dados" — all answer where/how org data lives and gets consumed, trading off centralization-vs-domain-ownership and schema-on-read-vs-write. This is the umbrella name used in `add-ons.md`.
 
 **Team taxonomy (ED/CD/EA/EML) and others:** see the insight note `insights/2026-09-28-taxonomia-times-de-dados.md` for the full breakdown of team capabilities and how CD4ML's Data+Model+Code maps onto them.
+
+**Terraform fundamentals (IaC tooling, not ML/data domain, but same "don't re-derive" principle):** see [[terraform_fundamentals_covered]] for the full breakdown (providers, state, plan diffs, modules) taught via a disposable sandbox on 2026-10-10.

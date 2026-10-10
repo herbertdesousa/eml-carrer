@@ -12,3 +12,4 @@ O Claude deve manter esta pasta e a memória local em sincronia: sempre que salv
 - [project_context.md](project_context.md) — estrutura e fluxo de trabalho deste repo.
 - [feedback_insight_authorship.md](feedback_insight_authorship.md) — como o Claude deve (não) escrever os insights.
 - [domain_knowledge_covered.md](domain_knowledge_covered.md) — resumo das explicações conceituais já dadas (Feature Store, Model Registry, Lambda/Kappa, SoR/SoT/Spec, etc.), pra não re-explicar do zero.
+- [terraform_fundamentals_covered.md](terraform_fundamentals_covered.md) — conceitos de Terraform (providers, state, plan, módulos) já ensinados via o sandbox descartável, pra não re-explicar do zero.
