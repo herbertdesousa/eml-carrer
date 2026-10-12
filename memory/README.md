@@ -13,3 +13,4 @@ O Claude deve manter esta pasta e a memória local em sincronia: sempre que salv
 - [feedback_insight_authorship.md](feedback_insight_authorship.md) — como o Claude deve (não) escrever os insights.
 - [domain_knowledge_covered.md](domain_knowledge_covered.md) — resumo das explicações conceituais já dadas (Feature Store, Model Registry, Lambda/Kappa, SoR/SoT/Spec, etc.), pra não re-explicar do zero.
 - [terraform_fundamentals_covered.md](terraform_fundamentals_covered.md) — conceitos de Terraform (providers, state, plan, módulos) já ensinados via o sandbox descartável, pra não re-explicar do zero.
+- [feature_store_exercise.md](feature_store_exercise.md) — plano do exercício simples de feature store (`customer_total_amount`): arquitetura, decisões de nome e as dúvidas conceituais (SoT vs feature, book de variáveis, point-in-time) resolvidas antes de construir.

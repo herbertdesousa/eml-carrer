@@ -34,3 +34,5 @@ Running log of the conceptual explanations already covered in conversation, mapp
 **Team taxonomy (ED/CD/EA/EML) and others:** see the insight note `insights/2026-09-28-taxonomia-times-de-dados.md` for the full breakdown of team capabilities and how CD4ML's Data+Model+Code maps onto them.
 
 **Terraform fundamentals (IaC tooling, not ML/data domain, but same "don't re-derive" principle):** see [[terraform_fundamentals_covered]] for the full breakdown (providers, state, plan diffs, modules) taught via a disposable sandbox on 2026-10-10.
+
+**Feature engineering vs. ingestion naming, SoT vs. Feature, "book de variáveis" as feature registry, point-in-time correctness, and offline-feature-store gaps (online store, training-serving consistency, TTL/freshness, backfill, versioning, drift, discovery):** see [[feature_store_exercise]] for the full breakdown, taught 2026-10-12 while designing the `customer_total_amount` feature exercise.
